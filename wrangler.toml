@@ -1,0 +1,14 @@
+name = "signflo"
+compatibility_date = "2024-04-01"
+compatibility_flags = ["nodejs_compat"]
+
+pages_build_output_dir = ".vercel/output/static"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "signflo-db"
+database_id = "LOCAL_DEV_ID" # Replace when deploying
+
+[[r2_buckets]]
+binding = "UPLOADS"
+bucket_name = "signflo-uploads"
