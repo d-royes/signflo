@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
     const buffer = Buffer.from(arrayBuffer);
     const base64Data = buffer.toString("base64");
 
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro-latest" });
+    const model = genAI.getGenerativeModel({ model: "gemini-3.1-pro-preview" });
 
     const systemPrompt = `You are an expert legal document analyst. 
 Your task is to analyze the provided image of a document (which could be an NDA, consent form, contract, or general agreement) and extract its structure into a detailed JSON schema.
@@ -78,7 +78,11 @@ Return ONLY valid JSON. Do not include markdown blocks like \`\`\`json.`;
 
     const parsedData = JSON.parse(jsonMatch);
     
-    return NextResponse.json(parsedData);
+    // Save to our mock local store for Day 2
+    const { saveAgreement } = await import("@/lib/store");
+    const id = await saveAgreement(parsedData);
+
+    return NextResponse.json({ id, schema: parsedData });
   } catch (error: any) {
     console.error("Extraction error:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });
