@@ -1,0 +1,63 @@
+{
+  "uxgzx7dd": {
+    "title": "Reliable Ducts AC Proposal",
+    "documentType": "Proposal",
+    "fields": [
+      {
+        "id": "payment_option_credit_card",
+        "label": "Credit Card",
+        "type": "checkbox",
+        "required": false
+      },
+      {
+        "id": "payment_option_financed",
+        "label": "Financed Through",
+        "type": "checkbox",
+        "required": false
+      },
+      {
+        "id": "payment_option_check",
+        "label": "Check",
+        "type": "checkbox",
+        "required": false
+      },
+      {
+        "id": "payment_option_cash",
+        "label": "Cash",
+        "type": "checkbox",
+        "required": false
+      },
+      {
+        "id": "payment_option_invoice",
+        "label": "Bill via Invoice",
+        "type": "checkbox",
+        "required": false
+      },
+      {
+        "id": "payment_option_leased",
+        "label": "Leased Through",
+        "type": "checkbox",
+        "required": false
+      },
+      {
+        "id": "equipment_option_budget",
+        "label": "Budget",
+        "type": "checkbox",
+        "required": false
+      },
+      {
+        "id": "customer_print_name",
+        "label": "Print your name",
+        "type": "text",
+        "required": true
+      }
+    ],
+    "signatures": [
+      {
+        "id": "customer_signature",
+        "role": "Customer",
+        "label": "Draw your signature"
+      }
+    ]
+  }
+}

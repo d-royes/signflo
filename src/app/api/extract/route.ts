@@ -32,6 +32,7 @@ Requirements for the JSON structure:
 {
   "title": "Document Title",
   "documentType": "e.g., NDA, Consent Form",
+  "contentMarkdown": "The complete, unabridged text of the agreement formatted in Markdown. Transcribe everything exactly. For any blank lines, checkboxes, signature lines, or input fields found in the original document, insert the exact string `{{field_id}}` (where field_id matches the id in the fields or signatures array below).",
   "fields": [
     {
       "id": "unique_field_id",

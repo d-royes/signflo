@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import ReactMarkdown from "react-markdown";
 
 export default function DynamicForm({ schema }: { schema: any }) {
   const [formData, setFormData] = useState<Record<string, any>>({});
@@ -26,6 +27,12 @@ export default function DynamicForm({ schema }: { schema: any }) {
           </p>
         )}
       </div>
+
+      {schema.contentMarkdown && (
+        <div className="mb-10 prose prose-sm sm:prose-base max-w-none text-gray-700 bg-gray-50 p-6 rounded-xl border border-gray-100">
+          <ReactMarkdown>{schema.contentMarkdown}</ReactMarkdown>
+        </div>
+      )}
 
       <form onSubmit={handleSubmit} className="space-y-8">
         {schema.fields && schema.fields.length > 0 && (
